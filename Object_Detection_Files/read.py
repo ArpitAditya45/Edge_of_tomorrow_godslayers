@@ -4,12 +4,12 @@ import cv2
 thres = 0.59 # Threshold to detect object
 
 classNames = []
-classFile = "/home/arpit-aditya/Desktop/IOT_Hackathon/object_detect/Object_Detection_Files/coco.names"
+classFile = ""#replace with coco names file path
 with open(classFile,"rt") as f:
     classNames = f.read().rstrip("\n").split("\n")
 
-configPath = "/home/arpit-aditya/Desktop/IOT_Hackathon/object_detect/Object_Detection_Files/ssd_mobilenet_v3_large_coco_2020_01_14.pbtxt"
-weightsPath = "/home/arpit-aditya/Desktop/IOT_Hackathon/object_detect/Object_Detection_Files/frozen_inference_graph.pb"
+configPath = ""#replace with your config path(ssd_mobilenet_v3_large_coco)
+weightsPath = ""#replace with your inference graph path
 
 net = cv2.dnn_DetectionModel(weightsPath,configPath)
 net.setInputSize(320,320)
